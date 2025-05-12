@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Game Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Mini Game Hub 🎲</h1>
+    <nav>
+      <ul>
+        <li><a href="#game1">Game 1</a></li>
+        <li><a href="#game2">Game 2</a></li>
+        <li><a href="#game3">Game 3</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="game-list"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mini Game Hub</p>
+  </footer>
+
+  <script>
+    // Sample JSON for games
+    const games = [
+      {
+        id: "game1",
+        title: "1v1 LOL",
+        description: "shootin game",
+        url: "games/1v1lol.html"
+      },
+      {
+        id: "game2",
+        title: "Amaze",
+        description: "amaze is for eboys",
+        url: "games/Amaze.html"
+      },
+      {
+        id: "game3",
+        title: "Attack Hole",
+        description: "Test your reaction speed!",
+        url: "games/Attack Hole.html"
+      }
+    ];
+
+    const gameList = document.getElementById('game-list');
+
+    games.forEach(game => {
+      const div = document.createElement('div');
+      div.className = 'game-card';
+      div.innerHTML = `
+        <h2>${game.title}</h2>
+        <p>${game.description}</p>
+        <a href="${game.url}" target="_blank">Play Now</a>
+      `;
+      gameList.appendChild(div);
+    });
+  </script>
+</body>
+</html>
